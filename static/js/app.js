@@ -7,7 +7,9 @@ function processdata(mydata){
 
         console.log(mydata);
         
-        //for i in
+for (let i = 0; i < mydata.length; i++) {
+        row = mydata[i]}
+
         otu_id = mydata.samples[0].otu_ids;
         console.log(otu_id)
 
@@ -15,26 +17,23 @@ function processdata(mydata){
         console.log(otu_labels)
 
         sample_values = mydata.samples[0].sample_values;
-        console.log()
+        console.log(sample_values) 
 
         // // Assign `x` and `y` values for the Plotly trace object
-        // let trace1 = {
-        //     x: mydata.id,
-        //     y: mydata.,
-        //     type: 'bar'
-        //     //orientation: horizontal
-        // };
-        
-        // let layout = {
-        //     title: title
-        // };
+        let trace1 = {
+                type: 'bar',
+                x: mydata.sample_values,
+                y: mydata.otu_id,
+                orientation: 'h'
+              };
 
-        // Plotly.newPlot("plot", [trace1], layout);
-
-}
+        let data = [trace1]
+              
+        Plotly.newPlot("plot", data);
+              }
 
 
-        //var trace1 = {
+        //var trace2 = {
                // x: [1, 2, 3, 4],
                 //y: [10, 11, 12, 13],
                 //mode: 'markers',
