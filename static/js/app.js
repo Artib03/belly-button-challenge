@@ -1,39 +1,72 @@
 
 url = 'https://2u-data-curriculum-team.s3.amazonaws.com/dataviz-classroom/v1.1/14-Interactive-Web-Visualizations/02-Homework/samples.json';
 
-d3.json(url).then(diversitydata =>  processdata(diversitydata));
+fetch('samples.json').then(response => response.json()).then(data => {
+        console.log(data);
+        }).catch(error => {console.error('Error fetching the data:', error);
 
-function processdata(mydata){
+        });
 
-        console.log(mydata);
+        let count = 0
+        
+// Sample JSON string
+//var jsonString = '';
 
-let count = 0
+// Parse the JSON string into a JavaScript object
+//var jsonArray = JSON.parse(jsonString);
 
-let otu_id = []
-let otu_labels = []     
-let sample_values = []
+// Loop through the JSON array
+//jsonArray.forEach(function(item) {
+    // Loop through each object in the JSON array
+    //for (var key in item) {
+        //if (item.hasOwnProperty(key)) {
+            // Access the inner array by its key
+            //var innerArray = item[key];
+            // Loop through the inner array
+            //innerArray.forEach(function(element) {
+                //console.log(element);
+           // });
+        //}
+   // }
+//});
 
-for (let i = 0; i < mydata.length; i++) {
-        row = mydata.id[i];
-        otu_id.push(row.otu_id);
-        otu_labels.push(row.otu_labels);
-        sample_values.push(row.sample_values)
-                        }
+var array = data.samples;
+for (var i = 0; i < array.length; i++) {
+        
+        if
+        (otu_id = data.samples[0].filter(function(item) {
+                return item.otu_ids < top10}));
+        
+        else {
+        otu_labels  = data.samples[0].filter()
+                return item.otu_labels < top10};
+        
+        else {
+        sample_values = data.samples[0].filter()
+                return item.sample_values < top10};
 
-        //otu_id = mydata.samples[0].otu_ids;
+        console.log(filteredData);
+
+        let otu_id = data.samples[0].otu_ids;
         console.log(otu_id)
 
-        //otu_labels = mydata.samples[0].otu_labels;
+        let otu_labels = data.samples[0].otu_labels;
         console.log(otu_labels)
 
-        //sample_values = mydata.samples[0].sample_values;
+        let sample_values = data.samples[0].sample_values;
         console.log(sample_values) 
 
-        // // Assign `x` and `y` values for the Plotly trace object
+        var top10 = jsonData.slice(0, 10);
+
+        // Log the top 10 results
+        console.log(top10);
+
+
+        // Assign `x` and `y` values for the Plotly trace object
         let trace1 = {
                 type: 'bar',
-                x: mydata.sample_values,
-                y: mydata.otu_id,
+                x:(data => samples.otu_id),
+                y: (data => samples.sample_values),
                 orientation: 'h'
               };
 
@@ -43,29 +76,43 @@ for (let i = 0; i < mydata.length; i++) {
                 title: title
               };
               
-        Plotly.newPlot("plot", data, layout);
-              }
+        Plotly.newPlot("bar", data, layout);
 
+        console.log(bar);
 
-        //var trace2 = {
-               // x: [1, 2, 3, 4],
-                //y: [10, 11, 12, 13],
-                //mode: 'markers',
-                //marker: {
-                //color: ['rgb(93, 164, 214)', 'rgb(255, 144, 14)',  'rgb(44, 160, 101)', 'rgb(255, 65, 54)'],
-                //opacity: [1, 0.8, 0.6, 0.4],
-                //size: [40, 60, 80, 100]
-                //}
-        //};
+        //Bubble chart      
+        var trace2 = {
+                x: [otu_ids],
+                y: [sample_values],
+                text:['<br>[otu_ids]'],
+                mode: 'markers',
+                marker: {
+                color: [otu_ids]['rgb(93, 164, 214)', 'rgb(255, 144, 14)',  'rgb(44, 160, 101)', 'rgb(255, 65, 54)'],
+                opacity: [1, 0.8, 0.6, 0.4],
+                size: [sample_values],
+                }
+        };
         
-        //var data = [trace1];
+        var data = [trace2];
         
-       // var layout = {
-               // title: 'Marker Size and Color',
-                //showlegend: true,
-               // height: 600,
-               // width: 600
-        //};
+        var layout = {
+                title: 'OTU ID',
+                showlegend: true,
+                height: 600,
+                width: 600
+        };
         
-        //Plotly.newPlot('myDiv', data, layout);
-      
+        Plotly.newPlot('bubble', data, layout);
+
+        console.log(bubble);
+
+// Sample metadata JSON object
+var metadata = data.metadata[0]
+    
+    // Loop through the object and display key-value pairs
+    for (var key in metadata) {
+        if (metadata.hasOwnProperty(key)) {
+            console.log(key + ": " + metadata[key]);
+        }
+    }
+}
