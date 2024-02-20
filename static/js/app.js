@@ -6,17 +6,27 @@ d3.json(url).then(diversitydata =>  processdata(diversitydata));
 function processdata(mydata){
 
         console.log(mydata);
-        
-for (let i = 0; i < mydata.length; i++) {
-        row = mydata[i]}
 
-        otu_id = mydata.samples[0].otu_ids;
+let count = 0
+
+let otu_id = []
+let otu_labels = []     
+let sample_values = []
+
+for (let i = 0; i < mydata.length; i++) {
+        row = mydata.id[i];
+        otu_id.push(row.otu_id);
+        otu_labels.push(row.otu_labels);
+        sample_values.push(row.sample_values)
+                        }
+
+        //otu_id = mydata.samples[0].otu_ids;
         console.log(otu_id)
 
-        otu_labels = mydata.samples[0].otu_labels;
+        //otu_labels = mydata.samples[0].otu_labels;
         console.log(otu_labels)
 
-        sample_values = mydata.samples[0].sample_values;
+        //sample_values = mydata.samples[0].sample_values;
         console.log(sample_values) 
 
         // // Assign `x` and `y` values for the Plotly trace object
@@ -28,8 +38,12 @@ for (let i = 0; i < mydata.length; i++) {
               };
 
         let data = [trace1]
+
+        let layout = {
+                title: title
+              };
               
-        Plotly.newPlot("plot", data);
+        Plotly.newPlot("plot", data, layout);
               }
 
 
