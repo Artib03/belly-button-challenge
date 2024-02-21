@@ -1,14 +1,20 @@
 
 url = 'https://2u-data-curriculum-team.s3.amazonaws.com/dataviz-classroom/v1.1/14-Interactive-Web-Visualizations/02-Homework/samples.json';
 
-fetch('samples.json').then(response => response.json()).then(data => {
+d3.json("samples.json").then(function(data) {
+        // Handle the loaded JSON data here
         console.log(data);
-        }).catch(error => {console.error('Error fetching the data:', error);
+        // Perform data visualization or any other operations
+        data.forEach(function(d, i) {
+                console.log(`Element ${i}: ${d}`);
+              });
 
-        });
-
-        let count = 0
-        
+    }).catch(function(error) {
+        // Handle errors if any
+        console.error("Error loading JSON data: ", error);
+    });
+     
+    
 // Sample JSON string
 //var jsonString = '';
 
@@ -33,19 +39,19 @@ fetch('samples.json').then(response => response.json()).then(data => {
 var array = data.samples;
 for (var i = 0; i < array.length; i++) {
         
-        if
-        (otu_id = data.samples[0].filter(function(item) {
-                return item.otu_ids < top10}));
+        //if
+        //(otu_id = data.samples[0].filter(function(item) {
+                //return item.otu_ids < top10}));
         
-        else {
-        otu_labels  = data.samples[0].filter()
-                return item.otu_labels < top10};
+        //else {
+        //otu_labels  = data.samples[0].filter()
+               // return item.otu_labels < top10};
         
-        else {
-        sample_values = data.samples[0].filter()
-                return item.sample_values < top10};
+        //else {
+        //sample_values = data.samples[0].filter()
+                //return item.sample_values < top10};
 
-        console.log(filteredData);
+        //console.log(filteredData);
 
         let otu_id = data.samples[0].otu_ids;
         console.log(otu_id)
@@ -93,16 +99,16 @@ for (var i = 0; i < array.length; i++) {
                 }
         };
         
-        var data = [trace2];
+        var info = [trace2];
         
-        var layout = {
+        var look = {
                 title: 'OTU ID',
                 showlegend: true,
                 height: 600,
                 width: 600
         };
         
-        Plotly.newPlot('bubble', data, layout);
+        Plotly.newPlot('bubble', info, look);
 
         console.log(bubble);
 
