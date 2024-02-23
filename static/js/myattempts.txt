@@ -1,0 +1,81 @@
+        //if
+        //(otu_id = data.samples[0].filter(function(item) {
+                //return item.otu_ids < top10}));
+        
+        //else {
+        //otu_labels  = data.samples[0].filter()
+               // return item.otu_labels < top10};
+        
+        //else {
+        //sample_values = data.samples[0].filter()
+                //return item.sample_values < top10};
+
+        //console.log(filteredData);
+
+        //otu_id = data.samples[0].otu_ids;
+       // console.log(otu_id)
+
+        //otu_labels = data.samples[0].otu_labels;
+        //console.log(otu_labels)
+
+        //sample_values = data.samples[0].sample_values;
+        //console.log(sample_values) 
+
+        // Log the top 10 results
+        //console.log(top10);
+
+
+        // Assign `x` and `y` values for the Plotly trace object
+       // let trace1 = {
+                //type: 'bar',
+                //x:(data => samples.otu_id),
+                //y: (data => samples.sample_values),
+                //orientation: 'h'
+              //};
+
+        //let data = [trace1]
+
+        //let layout = {
+               // title: title
+              //};
+              
+        //Plotly.newPlot("bar", data, layout);
+
+        //console.log(bar);
+
+        //Bubble chart      
+        //var trace2 = {
+               // x: [otu_ids],
+               // y: [sample_values],
+              //  text:['<br>[otu_ids]'],
+              //  mode: 'markers',
+              //  marker: {
+               // color: [otu_ids]['rgb(93, 164, 214)', 'rgb(255, 144, 14)',  'rgb(44, 160, 101)', 'rgb(255, 65, 54)'],
+              //  opacity: [1, 0.8, 0.6, 0.4],
+             //   size: [sample_values],
+             //   }
+      //  };
+        
+        //var info = [trace2];
+        
+        //var look = {
+                //title: 'OTU ID',
+                //showlegend: true,
+               // height: 600,
+               // width: 600
+        //};
+        
+        //Plotly.newPlot('bubble', info, look);
+
+       // console.log(bubble);
+
+// Sample metadata JSON object
+//var metadata = data.metadata[0]
+    
+    // Loop through the object and display key-value pairs
+   // for (var key in metadata) {
+        //if (metadata.hasOwnProperty(key)) {
+           // console.log(key + ": " + metadata[key]);
+       // }
+    //}
+//}
